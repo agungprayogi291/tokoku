@@ -26,6 +26,7 @@ class ProdukRequest extends FormRequest
         return [
             'nama_produk' => 'required|min:3',
             'stock_produk' => 'required|min:1',
+                 'image' =>'image|mimes:jpg,jpeg,png,svg,gif|max:2048',
             'description' => 'required|min:5',
             'harga' => 'required|min:4'
         ];

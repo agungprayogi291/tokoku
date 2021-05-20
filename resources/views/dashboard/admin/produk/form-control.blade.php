@@ -57,7 +57,7 @@
 			
 
 			<input type="hidden" name="users_id" value="{{Auth()->user()->id}}">
-			<input type="text" value="{{$produk->image_produk}}" name="image_produk" >
+			<input type="hidden" value="{{$produk->image_produk}}" name="image_produk" >
 		
 			<div class="col-md-6 mt-2  ">	
 				<button type="submit" name="submit" class="btn btn-success " >Upload</button>

@@ -28,41 +28,26 @@
   <link rel="stylesheet" href="{{asset('Adminlte/plugins/summernote/summernote-bs4.min.css')}}">
 
   <!-- datatables library -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/jquery.dataTables.css')}}">
   
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
-</script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"> </script>
-</head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<div class="wrapper ">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class=" main-header navbar navbar-expand navbar-white bg-secondary text-white">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/home" class="nav-link">Home</a>
+        <a href="/home" class="nav-link text-white">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block{{request()->is('dashboard/produk') ? ' active':''}}">
-        <a href="/dashboard/produk" class="nav-link">produk</a>
+        <a href="/dashboard/produk" class="nav-link text-white">produk</a>
       </li>
     </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
   </nav>
   <!-- /.navbar -->
 
@@ -135,7 +120,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper ">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -149,13 +134,13 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content ">
    
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-12 connectedSortable">
+          <section class="col-lg-12 col-xs-12 connectedSortable">
             @yield('content')
           </section>
 
@@ -169,8 +154,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  <footer class="main-footer bg-secondary">
+    <strong>Copyright &copy;2020-2021 <a href="https://agungprayogi291.github.io/js-web-profile/" target="_blank">agung</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0-pre
@@ -219,10 +204,14 @@
 <script src="{{asset('Adminlte/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('Adminlte/dist/js/pages/dashboard.js')}}"></script>
+<script type="text/javascript" charset="utf8" src="{{asset('js/jquery.dataTables.js')}}"></script>
+  
+<script type="text/javascript" src="{{asset('js/jquery-3.5.1.js')}}">
+</script>
 
 <script>  
-$(document).ready(function() {
-    $('#example').DataTable();
+$(document).ready( function () {
+    $('#table_id').DataTable();
 } );
 </script>
 </body>

@@ -28,8 +28,11 @@ Route::post('/login',[LoginController::class,'login'])->name('login');
 Route::post('/page-register/proses',[LoginController::class,'create'])->name('registrasi');
 Route::get('/buat/{id}',[LoginController::class,'edit']);
 
+Route::get('/category/{id}/show',[CategoryController::class,'show']);
 Route::resource('checkout',CheckoutController::class);
-Route::resource('category',CategoryController::class);
+
+Route::get('/produk/search',[homeController::class,'search']);
+
 	Route::middleware(['auth','ceklevel:admin'])->prefix('dashboard')->group(function(){
 		Route::get('produk',[ProdukController::class,'index']);
 		Route::get('delete/{id}',[ProdukController::class,'destroy']);

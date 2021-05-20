@@ -13,9 +13,13 @@
   	</div>
     <div class="row col-md-8  collapse navbar-collapse " id="navbarNavDropdown">
     	<ul class="d-flex navbar-nav ">
-    		<div class="col d-flex  align-item-center justify-content-center">
-    			<input type="text"  class="form-control"placeholder="search" aria-label="Recipient's username" aria-describedby="button-addon2">
-				<button class="btn btn-outline-secondary " type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+    		<div class="col d-flex  align-item-center justify-content-center ">
+    			<form action="/produk/search" method="get" class="form" enctype="multipart/form-data">
+    				@csrf
+    				<input type="text" placeholder="search" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" value="{{old('search')}}">
+					<button class="btn btn-outline-secondary " type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
+    			</form>
+    			
     		</div>
     		<div class="col d-flex justify-content-around">
     			<li class="nav-item">

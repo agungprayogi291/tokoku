@@ -2,13 +2,13 @@
 @section('title','produk')
 @section('content')
 
-<div class="container">	
+<div  style="overflow:auto;">	
 @if(session()->has('success'))
 <div class="alert alert-success">
 	{{session()->get('success')}}
 </div>
 @endif
-		<table id="example" class="display" style="width:100%">
+		<table id="table_id" class="display">
 			<thead>
 				<tr>
 					<th>Nama_produk</th>
@@ -37,12 +37,11 @@
 				
 				@endforeach
 
+
 			</tbody>
 
 		</table>
-		<div class="d-flex justify-content-center">
-			{{$produks->links()}}
-		</div>
+		
 </div>	
 
 @endsection

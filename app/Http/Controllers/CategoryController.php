@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\category;
+use App\Models\produk;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -53,7 +54,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $produks = produk::where('categories_id',$id)->get();
+        $categories = Category::where('id',$id)->get();
+        
+        return view('index',compact('produks'),['categories' => $categories]);
     }
 
     /**

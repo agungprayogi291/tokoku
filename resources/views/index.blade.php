@@ -32,21 +32,21 @@
 	  </div>
 	  <div class="carousel-inner" id="hot-product">
 	    <div class="carousel-item active">
-	      <img src="img/upload/1619244329-produk-1619244329.jpg" class="d-block " alt="img" width="200px">
+	      <img src="/img/upload/1619244329-produk-1619244329.jpg" class="d-block " alt="img" width="200px">
 	      <div class="carousel-caption d-none d-md-block">
 	        <h5>Second slide label</h5>
 	        <p>Some representative placeholder content for the second slide.</p>
 	      </div>
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/upload/1619244251-produk-1619244251.jpg" class="d-block " alt="img" width="200px">
+	      <img src="/img/upload/1619244251-produk-1619244251.jpg" class="d-block " alt="img" width="200px">
 	      <div class="carousel-caption d-none d-md-block">
 	        <h5>Second slide label</h5>
 	        <p>Some representative placeholder content for the second slide.</p>
 	      </div>
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/upload/1619228208-produk-1619228208.jpg" class="d-block " alt="img" width="200px">
+	      <img src="/img/upload/1619228208-produk-1619228208.jpg" class="d-block " alt="img" width="200px">
 	      <div class="carousel-caption d-none d-md-block">
 	        <h5>Third slide label</h5>
 	        <p>Some representative placeholder content for the third slide.</p>

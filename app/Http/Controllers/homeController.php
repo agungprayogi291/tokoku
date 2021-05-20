@@ -26,5 +26,9 @@ class homeController extends Controller
         return view('index' ,$data);
     }
 
-    
+    public function search(Request $request)
+    {
+        $produks = produk::where('nama_produk','like',"%".$request->search."%")->get();
+        return view('index',compact('produks') ,['categories' => Category::all()]);
+    }
 }

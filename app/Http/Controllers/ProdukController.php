@@ -17,7 +17,7 @@ class ProdukController extends Controller
     public function index()
     {
 
-        $produks = produk::latest()->simplePaginate(9);
+        $produks = produk::latest()->simplePaginate(6);
         $data = [
             'produks' => $produks
         ];
@@ -45,40 +45,31 @@ class ProdukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProdukRequest $request)
+    public function store(Request $request)
     {
-        // $request->validate([
-        //         'nama_produk' => 'required|min:3',
-        //         'stock_produk' => 'required|min:1',
-        //         'description' => 'required|min:5',
-        //         'image' =>'image|mimes:jpg,jpeg,png,svg,gif|max:2048',
-        //         'harga' => 'required|min:4',
-        // ]);
+        $request->validate([
+                'nama_produk' => 'required|min:3',
+                'stock_produk' => 'required|min:1',
+                'description' => 'required|min:5',
+                'image' =>'image|mimes:jpg,jpeg,png,svg,gif|max:2048',
+                'harga' => 'required|min:4',
+        ]);
 
-        // $file = $request->file('image');
-        // $image = $file->move('img/upload/',time().'-'. Str::limit(Str::slug(
-        //     'produk'),50,'').'-'.strtotime('now').'.'.$file->getClientOriginalExtension());
-
-        // $produk = $request->all();
-        // $produk['image_produk'] = $image;
-        // $produk->save();
-        // $produk = new produk();
-        // $produk->nama_produk = $request->nama_produkduk;
-        // $produk->stock_produk = $request->stock_produk;
-        // $produk->image_produk = $image;
-        // $produk->description = $request->description; 
-        // $produk->users_id = $request->users_id;
-        // $produk->categories_id = $request->category;
-        // $produk->harga = $request->harga;
-        // $produk->save();
-         
-        $file = $request->file('image_produk');
+        $file = $request->file('image');
         $image = $file->move('img/upload/',time().'-'. Str::limit(Str::slug(
             'produk'),50,'').'-'.strtotime('now').'.'.$file->getClientOriginalExtension());
 
-        $produk = $request->all();
-        $produk['image_produk'] = $image;
-        Produk::create($produk);
+    
+        $produk = new produk();
+        $produk->nama_produk = $request->nama_produk;
+        $produk->stock_produk = $request->stock_produk;
+        $produk->image_produk = $image;
+        $produk->description = $request->description; 
+        $produk->users_id = $request->users_id;
+        $produk->categories_id = $request->categories_id;
+        $produk->harga = $request->harga;
+        $produk->save();
+         
         session()->flash('success','create success');
         return redirect()->to('/dashboard/produk');
     }
@@ -157,4 +148,7 @@ class ProdukController extends Controller
         session()->flash('success','an items succes to delete');
         return back();
     }
+
+
+
 }
